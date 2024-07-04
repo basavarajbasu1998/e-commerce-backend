@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* styles.css */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        width: 100%;
+        background-color: #333;
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .logo {
+        color: white;
+        text-decoration: none;
+        font-size: 24px;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+      }
+
+      .mega-menu-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .mega-menu-content .row {
+        display: flex;
+        padding: 20px;
+      }
+
+      .mega-menu-content .column {
+        flex: 1;
+        padding: 10px;
+      }
+
+      .mega-menu-content .column h3 {
+        margin-top: 0;
+      }
+
+      .mega-menu-content .column a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .mega-menu:hover .mega-menu-content {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: none;
+        color: white;
+        font-size: 24px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .nav-item {
+          width: 100%;
+        }
+
+        .nav-link {
+          padding: 15px;
+          border-top: 1px solid #444;
+        }
+
+        .mega-menu-content {
+          position: static;
+        }
+
+        .mega-menu-content .row {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="#" class="logo">Brand</a>
+          <ul class="nav-links">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item mega-menu">
+              <a href="#" class="nav-link">Services</a>
+              <div class="mega-menu-content">
+                <div class="row">
+                  <div class="column">
+                    <h3>Column 1</h3>
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                  <div class="column">
+                    <h3>Column 2</h3>
+                    <a href="#">Link 4</a>
+                    <a href="#">Link 5</a>
+                    <a href="#">Link 6</a>
+                  </div>
+                  <div class="column">
+                    <h3>Column 3</h3>
+                    <a href="#">Link 7</a>
+                    <a href="#">Link 8</a>
+                    <a href="#">Link 9</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+          <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+      <script src="script.js">
+
+
+        // script.js
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
+      </script>
+    </body>
+  </body>
+</html>
